@@ -40,13 +40,27 @@ body {
   margin-left: 40px;
 }
 
-.table-margin-right {
-  margin-right: 50px;
-}
-
 .panel {
   border: black solid 1px;
   background: white;
   opacity: 0.9;
-  padding: 30px;
+  padding: 25px;
+  margin: 20px;
+  border-radius: 15px;
+}
+
+.warningText {
+  color: red;
+  font-weight: bold;
+}
+
+.smImg {
+  width: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h5 {
+  text-align: center;
 }

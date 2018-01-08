@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.css";
 
 const TradePanel = () => (
   <div className="panel">
     <div className="row">
-      <h2>Trade</h2>
-      <div className="rightAlign">
+      <div className="col">
+        <h2>Trade</h2>
+      </div>
+      <div className="col">
         <select name="panel-select">
           <option value="tradePanel">Trade</option>
           <option value="portfolioPanel">Portfolio</option>
@@ -15,17 +15,20 @@ const TradePanel = () => (
       </div>
     </div>
     <div className="row">
-      <div className="col-xs-6">
+      <div className="col">
         <p>Symbol:</p>
         <div className="input-group">
           <form>
-            <label htmlFor="buy-sell">Buy/Sell:</label>
-            <select name="buy-sell" className="form-control" placeholder="buy">
+            <label htmlFor="buy-sell">Buy/Sell: </label>
+            <br />
+            <select name="buy-sell">
               <option value="buy">Buy</option>
               <option value="sell">Sell</option>
             </select>
-            <label htmlFor="quantity">Quantity:</label>
-            <input type="text" name="quantity" className="form-control" />
+            <br />
+            <label htmlFor="quantity">Quantity: </label>
+            <br />
+            <input type="text" name="quantity" />
             <p>Date:</p>
             <p>1/5/2018</p>
             <p>$100.00</p>
@@ -36,7 +39,7 @@ const TradePanel = () => (
           </form>
         </div>
       </div>
-      <div className="col-xs-6">
+      <div className="col">
         <p>Cash Available:</p>
         <p>$100,000</p>
         <br />

@@ -7,14 +7,16 @@ import FBdata from "../data/FBclose.json";
 import GOOGLEdata from "../data/GOOGLEclose.json";
 
 class AppContainer extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
       stocks: ["FB", "GOOGL"],
       stocksArray: [FBdata.datatable.data, GOOGLEdata.datatable.data],
-      date: "2018-01-04"
+      date: "2018-01-04",
+      currentDatePhrase: "",
+      stockRows: []
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.dateChange = this.dateChange.bind(this);
   }
 
   componentDidMount() {
@@ -27,15 +29,18 @@ class AppContainer extends Component {
     this.props.getStockData();
   }
 
-  handleChange(event) {
-    this.setState({ date: event.target.value });
+  dateChange(e) {
+    this.setState({ date: e.target.value });
+  }
+
+  selectPanel(e) {
+    this.setState({});
   }
 
   render() {
-    console.log(this.state);
     return (
       <div>
-        <App onChange={this.handleChange} data={this.state} />
+        <App dateChange={this.dateChange} data={this.state} />
       </div>
     );
   }
