@@ -1,8 +1,12 @@
 import api_key from "./private.js";
-
 export const GET_REQUEST = "GET_REQUEST";
 export const GET_SUCCESS = "GET_SUCCESS";
 export const GET_FAILURE = "GET_FAILURE";
+export const NEW_DATE = "NEW_DATE";
+export const NEW_TRANSACTION = "NEW_TRANSACTION";
+export const CHANGE_BALANCE = "CHANGE_BALANCE";
+export const NEW_FILTER = "NEW_FILTER";
+export const RESET_FILTER = "RESET_FILTER";
 
 export function getRequest() {
   return {
@@ -43,5 +47,39 @@ export function getStockData(query) {
       .catch(e => {
         dispatch(getFailure(e));
       });
+  };
+}
+
+export function newDate(data) {
+  return {
+    type: NEW_DATE,
+    data
+  };
+}
+
+export function newTransaction(data) {
+  return {
+    type: NEW_TRANSACTION,
+    data
+  };
+}
+
+export function changeBalance(data) {
+  return {
+    type: CHANGE_BALANCE,
+    data
+  };
+}
+
+export function newFilter(data) {
+  return {
+    type: NEW_FILTER,
+    data: data.toUpperCase()
+  };
+}
+
+export function resetFilter(data) {
+  return {
+    type: RESET_FILTER
   };
 }

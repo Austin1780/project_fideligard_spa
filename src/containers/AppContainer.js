@@ -5,6 +5,7 @@ import serialize from "form-serialize";
 import { getStockData } from "../actions";
 import FBdata from "../data/FBclose.json";
 import GOOGLEdata from "../data/GOOGLEclose.json";
+import * as Actions from "../actions";
 
 class AppContainer extends Component {
   constructor(props) {
@@ -14,20 +15,21 @@ class AppContainer extends Component {
       stocksArray: [FBdata.datatable.data, GOOGLEdata.datatable.data],
       date: "2018-01-04",
       currentDatePhrase: "",
-      stockRows: []
+      stockRows: [],
+      currentBalance: 20000
     };
     this.dateChange = this.dateChange.bind(this);
   }
 
-  componentDidMount() {
-    // this.setState({
-    //   stocksArray: this.state.stocksArray.push(
-    //     FBdata.datatable.data,
-    //     GOOGLEdata.datatable.data
-    //   )
-    // });
-    this.props.getStockData();
-  }
+  // componentDidMount() {
+  //   // this.setState({
+  //   //   stocksArray: this.state.stocksArray.push(
+  //   //     FBdata.datatable.data,
+  //   //     GOOGLEdata.datatable.data
+  //   //   )
+  //   // });
+  //   this.props.getStockData();
+  // }
 
   dateChange(e) {
     this.setState({ date: e.target.value });
@@ -54,9 +56,12 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getStockData: () => {
-      dispatch(getStockData("AAPL"));
+    newDate: date => {
+      dispatch(Actions.NEW_DATE(date));
     }
+    // getStockData: () => {
+    //   dispatch(getStockData("FB"));
+    // }
   };
 };
 

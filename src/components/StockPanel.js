@@ -39,6 +39,7 @@ const StockPanel = ({ data }) => {
         <div className="col">{currentDatePhrase}</div>
         <div className="col">
           <label htmlFor="stockFilter">Filter:</label>
+          <br />
           <input type="text" name="stockFilter" />
         </div>
       </div>

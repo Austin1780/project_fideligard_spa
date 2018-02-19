@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const TradePanel = () => (
+const TradePanel = props => (
   <div className="panel">
     <div className="row">
       <div className="col">
@@ -29,10 +29,9 @@ const TradePanel = () => (
             <label htmlFor="quantity">Quantity: </label>
             <br />
             <input type="text" name="quantity" />
-            <p>Date:</p>
-            <p>1/5/2018</p>
-            <p>$100.00</p>
-            <p>$1,000.00</p>
+            <p>Date: 1/4/2018</p>
+            <p>Price: $100.00</p>
+            <p>Cost: $1,000.00</p>
             <button type="submit" className="btn btn-primary">
               Submit
             </button>
@@ -40,8 +39,7 @@ const TradePanel = () => (
         </div>
       </div>
       <div className="col">
-        <p>Cash Available:</p>
-        <p>$100,000</p>
+        <p>Cash Available: </p>
         <br />
         <p>Order Status:</p>
         <p className="status-color">VALID</p>

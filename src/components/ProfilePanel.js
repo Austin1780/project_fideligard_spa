@@ -3,8 +3,10 @@ import React, { Component } from "react";
 const ProfilePanel = () => (
   <div className="panel">
     <div className="row">
-      <h2>Profile</h2>
-      <div className="rightAlign">
+      <div className="col">
+        <h2>Profile</h2>
+      </div>
+      <div className="col">
         <select name="panel-select">
           <option value="tradePanel">Trade</option>
           <option value="portfolioPanel">Portfolio</option>
