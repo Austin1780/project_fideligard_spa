@@ -21,16 +21,6 @@ class AppContainer extends Component {
     this.dateChange = this.dateChange.bind(this);
   }
 
-  // componentDidMount() {
-  //   // this.setState({
-  //   //   stocksArray: this.state.stocksArray.push(
-  //   //     FBdata.datatable.data,
-  //   //     GOOGLEdata.datatable.data
-  //   //   )
-  //   // });
-  //   this.props.getStockData();
-  // }
-
   dateChange(e) {
     this.setState({ date: e.target.value });
   }
